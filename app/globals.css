@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+.font-custom {
+  font-family: "Inter Display V", sans-serif;
+}
+
+.no-select {
+  user-select: none !important;
+}
+
+.custom-border {
+  position: relative;
+  padding: 5px 12px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.custom-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    92.26deg,
+    rgba(95, 87, 255, 0.3) -1.79%,
+    rgba(51, 207, 255, 0.3) 127.15%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  z-index: 0;
+}
+
+.custom-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-text {
+  background: linear-gradient(91.13deg, #5f57ff -9.06%, #33cfff 149.95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-bg {
+  background: linear-gradient(
+    179.19deg,
+    rgba(255, 255, 255, 0) 0.7%,
+    rgba(255, 255, 255, 0.15) 180.65%
+  );
+}
+
+.marquee-container-one {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: auto;
+  width: 700px;
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 100px;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee-slide {
+  flex-shrink: 0;
+  padding-right: 20px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Custom CSS for FAQ animations */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-content.open {
+  max-height: 500px;
+}
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-items {
+  display: flex;
+  gap: 20px;
+  animation: marquee-animation 10s linear infinite;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1B25;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f53;
+  border-radius: 10px;
+}
+
+.aos-init[data-aos][data-aos].aos-animate {
+  transform: unset;
+}
